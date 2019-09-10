@@ -13,14 +13,15 @@ namespace PalTracker
 
         public TimeEntry()
         {
-
+            
         }
-        public TimeEntry(long param1, long param2,  DateTime date, long param3)
+        public TimeEntry(long param2, long param3,  DateTime date, long param4)
         {
-            Param1 = param1;
+            Param1 = null;
             Param2 = param2;
-            Date = date;
             Param3 = param3;
+            Date = date;
+            Param4 = param4;
         }
         public TimeEntry(long param1, long param2,  long param3, DateTime date, long param4)
         {
