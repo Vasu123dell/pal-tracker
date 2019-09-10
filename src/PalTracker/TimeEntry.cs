@@ -5,46 +5,46 @@ namespace PalTracker
 {
     public class TimeEntry
     {
-        public long? Param1 { get; set; }
-        public long Param2 { get; set; }
-        public long Param3 { get; set; }
-        public DateTime Date { get; set; }
-        public long Param4 { get; set; }
+        public long? Id  { get; set; }
+        public long ProjectId  { get; set; }
+        public long UserId  { get; set; }
+        public DateTime Date  { get; set; }
+        public long Hours  { get; set; }
 
         public TimeEntry()
         {
             
         }
-        public TimeEntry(long param2, long param3,  DateTime date, long param4)
+        public TimeEntry(long id, long projectId, long userId, DateTime date, int hours)
         {
-            Param1 = null;
-            Param2 = param2;
-            Param3 = param3;
+            Id = id;
+            ProjectId = projectId;
+            UserId = userId;
             Date = date;
-            Param4 = param4;
+            Hours = hours;
         }
-        public TimeEntry(long param1, long param2,  long param3, DateTime date, long param4)
+        public TimeEntry(long projectId, long userId, DateTime date, int hours)
         {
-            Param1 = param1;
-            Param2 = param2;
-            Param3 = param3;
+            Id = null;
+            ProjectId = projectId;
+            UserId = userId;
             Date = date;
-            Param4 = param4;
+            Hours = hours;
         }
 
         public override bool Equals(object obj)
         {
             return obj is TimeEntry entry &&
-                   EqualityComparer<long?>.Default.Equals(Param1, entry.Param1) &&
-                   Param2 == entry.Param2 &&
-                   Param3 == entry.Param3 &&
+                   EqualityComparer<long?>.Default.Equals(Id, entry.Id) &&
+                   ProjectId == entry.ProjectId &&
+                   UserId == entry.UserId &&
                    Date == entry.Date &&
-                   Param4 == entry.Param4;
+                   Hours == entry.Hours;
         }
 
         public override int GetHashCode()
         {
-            return HashCode.Combine(Param1, Param2, Param3, Date, Param4);
+            return HashCode.Combine(Id, ProjectId, UserId, Date, Hours);
         }
     }
 }

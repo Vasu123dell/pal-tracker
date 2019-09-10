@@ -11,7 +11,7 @@ namespace PalTracker
         {
             var id = _timeEntries.Count + 1;
 
-            timeEntry.Param1 = id;
+            timeEntry.Id = id;
 
             _timeEntries.Add(id, timeEntry);
 
@@ -26,7 +26,7 @@ namespace PalTracker
 
         public TimeEntry Update(long id, TimeEntry timeEntry)
         {
-            timeEntry.Param1 = id;
+            timeEntry.Id = id;
 
             _timeEntries[id] = timeEntry;
 
